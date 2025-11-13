@@ -1,0 +1,350 @@
+/* ---------- GOOGLE FONT ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ---------- GLOBAL RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #0a0f1f, #04060d 80%);
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  padding: 20px 40px;
+  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Header Title - Left Side */
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  animation: fadeGlow 2.5s infinite ease-in-out;
+}
+
+/* Header Role - Right Side */
+header .role {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffffb3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInRight 1.2s ease forwards;
+}
+
+/* Title Animation */
+@keyframes fadeGlow {
+  0%, 100% { text-shadow: 0 0 10px #00ffff; }
+  50% { text-shadow: 0 0 25px #00b3b3; }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00ffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+nav a:hover {
+  color: #00ffff;
+}
+
+/* ---------- SECTION BASE ---------- */
+section {
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 0 20px;
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- HEADINGS SPACING ---------- */
+h2 {
+  margin-bottom: 50px; /* Adds more space below main section titles */
+  color: #00ffff;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+h3 {
+  margin-top: 40px;  /* Adds clear gap above subheadings */
+  margin-bottom: 25px; /* Space below subheadings */
+  color: #00ffff;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+/* ---------- ABOUT ---------- */
+#about {
+  text-align: center;
+}
+
+#about img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #00ffff;
+  margin: 25px 0;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+#about img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+#about p {
+  max-width: 700px;
+  margin: auto;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+/* ---------- SKILLS GRID SECTION ---------- */
+#skills {
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  background: rgba(0,255,255,0.1);
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.skill-card h3 {
+  color: #00ffff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.skill-card ul {
+  list-style: none;
+}
+
+.skill-card li {
+  margin: 6px 0;
+  color: #e0e0e0;
+}
+
+/* ---------- PROJECTS ---------- */
+#projects {
+  text-align: center;
+}
+
+#projects img {
+  width: 90%;
+  max-width: 350px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#projects img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+#projects a {
+  display: inline-block;
+  background: #00ffff;
+  color: #111;
+  padding: 10px 20px;
+  margin: 10px 0 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#projects a:hover {
+  background: #00b3b3;
+  transform: translateY(-3px);
+}
+
+/* ---------- CONTACT FORM ---------- */
+form {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+}
+
+label {
+  font-weight: 600;
+  color: #00ffff;
+}
+
+input, textarea {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 10px #00ffff;
+  outline: none;
+}
+
+input[type="submit"] {
+  background: #00ffff;
+  color: #111;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, background 0.3s;
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.05);
+  background: #00b3b3;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: rgba(0,0,0,0.7);
+  padding: 40px 20px;
+  text-align: center;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased spacing between footer items */
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00b3b3;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.social-icons i {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons i:hover {
+  transform: scale(1.2);
+  color: #00ffff;
+}
+
+footer p span {
+  color: #00ffff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  header h1, header .role {
+    text-align: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+  #about img {
+    width: 130px;
+    height: 130px;
+  }
+}
